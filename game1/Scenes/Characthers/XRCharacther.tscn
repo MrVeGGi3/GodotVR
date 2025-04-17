@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://cu6rxc7t8r260"]
+
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_aoncx"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_81eo4"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_u5ifp"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_3w4pf"]
+[ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="4_35hxj"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_ffnna"]
+[ext_resource type="Script" uid="uid://bhjueektt7tfi" path="res://addons/godot-xr-tools/player/player_body.gd" id="5_3w4pf"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_sming"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_lbyfo"]
+[ext_resource type="Script" uid="uid://cy28hqfeiu1rq" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="9_35hxj"]
+
+[sub_resource type="Resource" id="Resource_kw512"]
+script = ExtResource("9_35hxj")
+flags = 0
+move_drag = 5.0
+move_traction = 30.0
+stop_on_slope = true
+move_max_slope = 45.0
+jump_max_slope = 45.0
+jump_velocity = 3.0
+bounciness = 0.0
+bounce_threshold = 1.0
+metadata/_custom_type_script = "uid://cy28hqfeiu1rq"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sming"]
+
+[node name="XrCharacther" type="XROrigin3D"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.331417, 0)
+
+[node name="LeftHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.351164, -0.334858)
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHand" instance=ExtResource("1_aoncx")]
+
+[node name="MovementDirect" parent="LeftHand" instance=ExtResource("2_u5ifp")]
+strafe = true
+
+[node name="FunctionPickup" parent="LeftHand" instance=ExtResource("3_3w4pf")]
+
+[node name="MovementClimb" parent="LeftHand" instance=ExtResource("4_35hxj")]
+
+[node name="MovementClimb2" parent="LeftHand" instance=ExtResource("4_35hxj")]
+
+[node name="RightHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.351164, -0.334858)
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHand" instance=ExtResource("2_81eo4")]
+
+[node name="MovementTurn" parent="RightHand" instance=ExtResource("5_sming")]
+turn_mode = 2
+
+[node name="FunctionPickup" parent="RightHand" instance=ExtResource("3_3w4pf")]
+
+[node name="MovementJump" parent="RightHand" instance=ExtResource("6_lbyfo")]
+jump_button_action = "ax_button"
+
+[node name="PlayerBody" type="CharacterBody3D" parent="." groups=["player_body"] instance=ExtResource("4_ffnna")]
+process_priority = -100
+process_physics_priority = -100
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.842524, 0.191497)
+top_level = true
+collision_layer = 524288
+collision_mask = 1023
+script = ExtResource("5_3w4pf")
+player_radius = 0.5
+player_height_min = 1.0
+physics = SubResource("Resource_kw512")
+ground_control = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750251, 0.562706)
+shape = SubResource("CapsuleShape3D_sming")
