@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0jt30o5t7uxt"]
+
+[ext_resource type="Script" uid="uid://cpgtutakboxnr" path="res://Scripts/RoletaCategoria.cs" id="1_mjn2g"]
+[ext_resource type="Script" uid="uid://bp2wjln2va6sd" path="res://Scripts/SortingArrow.cs" id="2_1v41h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mjn2g"]
+load_path = "res://.godot/imported/Seta.png-355f652d9342c0137eb96b78ab5aa971.ctex"
+
+[node name="RoletaCategoria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjn2g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(580, 316)
+rotation = 6.28319
+target_position = Vector2(0, -200)
+script = ExtResource("2_1v41h")
+
+[node name="Arrow" type="Sprite2D" parent="RayCast2D"]
+position = Vector2(-3, -20)
+texture = SubResource("CompressedTexture2D_mjn2g")
+
+[node name="RoulleteMarker" type="Node2D" parent="."]
+
+[node name="SurpriseCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(578, 59)
+
+[node name="HistoryCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(830, 276)
+
+[node name="SportsCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(578, 503)
+
+[node name="ScienceCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(302, 292)
+
+[node name="EntertainmentCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(361, 125)
+
+[node name="LanguagesCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(763, 139)
+
+[node name="GeographyCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(764, 439)
+
+[node name="ArtsCategory" type="Marker2D" parent="RoulleteMarker"]
+position = Vector2(371, 434)

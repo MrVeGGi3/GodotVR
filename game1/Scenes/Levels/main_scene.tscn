@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxa8ti5qjg8lw"]
+[gd_scene load_steps=15 format=3 uid="uid://bxa8ti5qjg8lw"]
 
 [ext_resource type="PackedScene" uid="uid://cu6rxc7t8r260" path="res://Scenes/Characthers/XRCharacther.tscn" id="1_coy0t"]
 [ext_resource type="Script" uid="uid://xpll5225b4q5" path="res://Scenes/Levels/main.gd" id="1_nu5rl"]
 [ext_resource type="PackedScene" uid="uid://dgmukosev854s" path="res://Scenes/itens/ball.tscn" id="3_nl0el"]
 [ext_resource type="PackedScene" uid="uid://dupljp7o4bytf" path="res://Scenes/itens/climbable.tscn" id="4_y75am"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_y75am"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3jxj"]
 size = Vector3(100, 1, 20)
@@ -84,3 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56955, 3.66504, -1.2693)
 
 [node name="Climbable4" parent="Wall" instance=ExtResource("4_y75am")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90172, 4.79711, 0)
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("5_y75am")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.2557, 0, -5.03513)
+scene_properties_keys = PackedStringArray()

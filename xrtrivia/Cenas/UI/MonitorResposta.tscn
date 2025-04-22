@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://j26270qlms1o"]
+
+[node name="MonitorResposta" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Alternativas" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="A" type="Button" parent="Alternativas"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 78.0
+offset_right = 198.0
+offset_bottom = 178.0
+text = "A"
+
+[node name="B" type="Button" parent="Alternativas"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 211.0
+offset_right = 200.0
+offset_bottom = 311.0
+text = "B
+"
+
+[node name="C" type="Button" parent="Alternativas"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 349.0
+offset_right = 201.0
+offset_bottom = 449.0
+text = "C
+"
+
+[node name="D" type="Button" parent="Alternativas"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 475.0
+offset_right = 201.0
+offset_bottom = 575.0
+text = "D
+"
+
+[node name="Respostas" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="A" type="Button" parent="Respostas"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 71.0
+offset_right = 1030.0
+offset_bottom = 171.0
+
+[node name="B" type="Button" parent="Respostas"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 201.0
+offset_right = 1033.0
+offset_bottom = 301.0
+
+[node name="C" type="Button" parent="Respostas"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 340.0
+offset_right = 1035.0
+offset_bottom = 440.0
+
+[node name="D" type="Button" parent="Respostas"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 469.0
+offset_right = 1035.0
+offset_bottom = 569.0

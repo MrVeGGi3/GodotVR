@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bt7cbegye3gow"
+
+[deps]
+
+files=["res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Pergunta.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).A.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).B.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).en.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).D.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Alternativa Correta.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Dificuldade da Pergunta.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Pergunta Respondida?.translation"]
+
+source_file="res://Data/XRTrivia - Perguntas em Português - Perguntas (1).csv"
+dest_files=["res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Pergunta.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).A.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).B.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).en.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).D.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Alternativa Correta.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Dificuldade da Pergunta.translation", "res://Data/XRTrivia - Perguntas em Português - Perguntas (1).Pergunta Respondida?.translation"]
+
+[params]
+
+compress=true
+delimiter=0

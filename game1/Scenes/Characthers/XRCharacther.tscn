@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_3w4pf"]
 [ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="4_35hxj"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_ffnna"]
-[ext_resource type="Script" uid="uid://bhjueektt7tfi" path="res://addons/godot-xr-tools/player/player_body.gd" id="5_3w4pf"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_35hxj"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_sming"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_lbyfo"]
 [ext_resource type="Script" uid="uid://cy28hqfeiu1rq" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="9_35hxj"]
@@ -46,6 +46,11 @@ strafe = true
 
 [node name="MovementClimb2" parent="LeftHand" instance=ExtResource("4_35hxj")]
 
+[node name="FunctionPointer" parent="LeftHand" instance=ExtResource("5_35hxj")]
+show_laser = 2
+laser_length = 1
+show_target = true
+
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.351164, -0.334858)
 tracker = &"right_hand"
@@ -60,14 +65,14 @@ turn_mode = 2
 [node name="MovementJump" parent="RightHand" instance=ExtResource("6_lbyfo")]
 jump_button_action = "ax_button"
 
-[node name="PlayerBody" type="CharacterBody3D" parent="." groups=["player_body"] instance=ExtResource("4_ffnna")]
-process_priority = -100
-process_physics_priority = -100
+[node name="FunctionPointer" parent="RightHand" instance=ExtResource("5_35hxj")]
+show_laser = 2
+laser_length = 1
+show_target = true
+collision_mask = 5242882
+
+[node name="PlayerBody" parent="." instance=ExtResource("4_ffnna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.842524, 0.191497)
-top_level = true
-collision_layer = 524288
-collision_mask = 1023
-script = ExtResource("5_3w4pf")
 player_radius = 0.5
 player_height_min = 1.0
 physics = SubResource("Resource_kw512")
