@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://gm5x5sl8an66"]
+[gd_scene load_steps=3 format=3 uid="uid://gm5x5sl8an66"]
+
+[ext_resource type="Script" uid="uid://ginro8jro1qg" path="res://Scripts/CSVOpener.cs" id="1_1ptft"]
+[ext_resource type="Script" uid="uid://betikypnp0jrf" path="res://Scripts/QuestionSelector.cs" id="2_g1j5y"]
 
 [node name="QuestionScreen" type="Control"]
 layout_mode = 3
@@ -29,3 +32,9 @@ offset_left = 81.0
 offset_top = 105.0
 offset_right = 481.0
 offset_bottom = 155.0
+
+[node name="CSVOpener" type="Node" parent="."]
+script = ExtResource("1_1ptft")
+
+[node name="QuestionSelector" type="Node" parent="."]
+script = ExtResource("2_g1j5y")

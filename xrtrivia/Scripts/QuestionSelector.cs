@@ -12,8 +12,8 @@ public partial class QuestionSelector : Node
     public override void _Ready() 
     {
         base._Ready();
-        loadedQuestions = GetNode<CSVOpener>();
-        gm = GetNode<GameManager>();
+        loadedQuestions = GetNode<CSVOpener>("CSVOpener");
+        gm = GetNode<GameManager>("/root/GameManager");
         ChooseQuestion(gm.questionType);
     }
 

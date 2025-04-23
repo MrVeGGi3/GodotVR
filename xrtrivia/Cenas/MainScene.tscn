@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://b83gljmktbcvp"]
+[gd_scene load_steps=20 format=3 uid="uid://b83gljmktbcvp"]
 
 [ext_resource type="PackedScene" uid="uid://dfwyw07jbcran" path="res://Cenas/Player.tscn" id="1_7abpu"]
 [ext_resource type="PackedScene" uid="uid://gm5x5sl8an66" path="res://Cenas/UI/Tela.tscn" id="2_miaai"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_mipkc"]
 [ext_resource type="PackedScene" uid="uid://j26270qlms1o" path="res://Cenas/UI/MonitorResposta.tscn" id="4_miaai"]
 [ext_resource type="PackedScene" uid="uid://scb8twmgheli" path="res://Cenas/UI/Contador.tscn" id="5_afjud"]
+[ext_resource type="Script" uid="uid://7knqe0lugb08" path="res://Scripts/GameManager.cs" id="6_akm62"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gaqlc"]
 size = Vector3(10, 1, 10)
@@ -49,6 +50,11 @@ size = Vector3(4, 4, 1)
 size = Vector3(4, 4, 1)
 
 [node name="MainScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, 27.4822, 0)
+light_energy = 1.905
+shadow_enabled = true
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -114,7 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 0.726575, 0.687087, 0, -0.687087, 0.726575, 
 screen_size = Vector2(2, 1)
 scene = ExtResource("4_miaai")
 viewport_size = Vector2(1200, 700)
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("MonitorAlternativa")
 
 [node name="TimeCounter1" type="StaticBody3D" parent="."]
 transform = Transform3D(0.79653, 0, 0.604599, 0, 1, 0, -0.604599, 0, 0.79653, -7.62014, 1.25847, -4.72923)
@@ -131,7 +137,7 @@ transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.07391
 screen_size = Vector2(3, 3)
 scene = ExtResource("5_afjud")
 viewport_size = Vector2(1100, 600)
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("TimeCounter")
 
 [node name="TimeCounter2" type="StaticBody3D" parent="."]
 transform = Transform3D(0.601815, 0, -0.798636, 0, 1, 0, 0.798636, 0, 0.601815, 8.05937, 1.25847, -4.75466)
@@ -148,4 +154,7 @@ transform = Transform3D(1, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 1, 0.321408
 screen_size = Vector2(3, 3)
 scene = ExtResource("5_afjud")
 viewport_size = Vector2(1100, 600)
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("TimeCounter")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("6_akm62")

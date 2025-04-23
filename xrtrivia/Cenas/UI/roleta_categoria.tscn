@@ -1,7 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0jt30o5t7uxt"]
+[gd_scene load_steps=12 format=3 uid="uid://d0jt30o5t7uxt"]
 
 [ext_resource type="Script" uid="uid://cpgtutakboxnr" path="res://Scripts/RoletaCategoria.cs" id="1_mjn2g"]
 [ext_resource type="Script" uid="uid://bp2wjln2va6sd" path="res://Scripts/SortingArrow.cs" id="2_1v41h"]
+[ext_resource type="Texture2D" uid="uid://c1mw2g3fayj4n" path="res://Protótipo/Icons/interrogation-mark.png" id="3_jprf0"]
+[ext_resource type="Texture2D" uid="uid://bfw1kbu827r84" path="res://Protótipo/Icons/parchment.png" id="4_udp35"]
+[ext_resource type="Texture2D" uid="uid://yq5sv24w872t" path="res://Protótipo/Icons/sports.png" id="5_ji3rb"]
+[ext_resource type="Texture2D" uid="uid://d3tvqgvyj0key" path="res://Protótipo/Icons/science.png" id="6_ji3rb"]
+[ext_resource type="Texture2D" uid="uid://diikksh7be74c" path="res://Protótipo/Icons/cinema.png" id="7_1nak0"]
+[ext_resource type="Texture2D" uid="uid://dd4vswrq7f0jo" path="res://Protótipo/Icons/languages.png" id="8_6mo0f"]
+[ext_resource type="Texture2D" uid="uid://bpetsa4pliutv" path="res://Protótipo/Icons/history.png" id="9_qjn8a"]
+[ext_resource type="Texture2D" uid="uid://bwi2osv6ms16c" path="res://Protótipo/Icons/palette.png" id="10_gvlvh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mjn2g"]
 load_path = "res://.godot/imported/Seta.png-355f652d9342c0137eb96b78ab5aa971.ctex"
@@ -58,3 +66,45 @@ position = Vector2(764, 439)
 
 [node name="ArtsCategory" type="Marker2D" parent="RoulleteMarker"]
 position = Vector2(371, 434)
+
+[node name="RoulleteSprites" type="Node2D" parent="."]
+
+[node name="SurpriseSprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(574, 69)
+scale = Vector2(0.221239, 0.221239)
+texture = ExtResource("3_jprf0")
+
+[node name="HistorySprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(829, 275)
+scale = Vector2(0.270714, 0.270714)
+texture = ExtResource("4_udp35")
+
+[node name="SportsSprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(584, 520)
+scale = Vector2(0.158647, 0.158647)
+texture = ExtResource("5_ji3rb")
+
+[node name="ScienceSprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(305, 284)
+scale = Vector2(0.216773, 0.233734)
+texture = ExtResource("6_ji3rb")
+
+[node name="EntertainmentSprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(375, 96)
+scale = Vector2(0.295452, 0.290173)
+texture = ExtResource("7_1nak0")
+
+[node name="LanguagesSprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(765, 123)
+scale = Vector2(0.24469, 0.24469)
+texture = ExtResource("8_6mo0f")
+
+[node name="GeographySprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(767, 437)
+scale = Vector2(0.253983, 0.253983)
+texture = ExtResource("9_qjn8a")
+
+[node name="ArtsSprite2D" type="Sprite2D" parent="RoulleteSprites"]
+position = Vector2(372, 435)
+scale = Vector2(0.238588, 0.238588)
+texture = ExtResource("10_gvlvh")

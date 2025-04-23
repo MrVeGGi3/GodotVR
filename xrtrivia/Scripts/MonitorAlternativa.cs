@@ -19,33 +19,32 @@ public partial class MonitorAlternativa : Node
     public override void _Ready() 
     {
         base._Ready();
-        alternativaA = GetNode<Button>();
-        alternativaB = GetNode<Button>();
-        alternativaC = GetNode<Button>();
-        alternativaD = GetNode<Button>();
+        alternativaA = GetNode<Button>("Alternativas/A");
+        alternativaB = GetNode<Button>("Alternativas/B");
+        alternativaC = GetNode<Button>("Alternativas/C");
+        alternativaD = GetNode<Button>("Alternativas/D");
         
-        descricaoA = GetNode<Button>();
-        descricaoB = GetNode<Button>();
-        descricaoC = GetNode<Button>();
-        descricaoD = GetNode<Button>();
+        descricaoA = GetNode<Button>("Respostas/A");
+        descricaoB = GetNode<Button>("Respostas/B");
+        descricaoC = GetNode<Button>("Respostas/C");
+        descricaoD = GetNode<Button>("Respostas/D");
 
-        gm = GetNode<GameManager>();
-        player = GetNode<Player>();
+        gm = GetNode<GameManager>("/root/GameManager");
 
 
-        showAlternatives(gm.actualQuestion)
+        showAlternatives(gm.actualQuestion);
 
-        alternativaA.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaA)
-        descricaoA.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaA)
+        alternativaA.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaA);
+        descricaoA.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaA);
 
-        alternativaB.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaB)
-        descricaoB.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaB)
+        alternativaB.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaB);
+        descricaoB.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaB);
 
-        alternativaC.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaC)
-        descricaoC.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaC)
+        alternativaC.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaC);
+        descricaoC.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaC);
 
-        alternativaD.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaD)
-        descricaoD.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaD)
+        alternativaD.Pressed += () => CheckCorrectAnswer(gm.actualQuestion.alternativaD);
+        descricaoD.Pressed += () =>CheckCorrectAnswer(gm.actualQuestion.alternativaD);
     }
 
     private void showAlternatives(QuestionData perguntaAtual)
@@ -58,21 +57,25 @@ public partial class MonitorAlternativa : Node
 
     private void CheckCorrectAnswer(string alternativaSelecionada)
     {
-        if (player.canAnswer)
+        if (gm.canAnswer)
         {
             if(alternativaSelecionada == gm.actualQuestion.alternativaCorreta)
             {
                 player.correctAnswers += 1;
                 //Realiza Calculo do ponto em relação ao tempo;
                 player.canAnswer = false;
-                GD.Print("Respota Correta");
+                GD.Print("Resposta Correta");
             }
-            else:
+            else
+            {
                 GD.Print("Resposta Incorreta");
                 player.canAnswer = false;
                 gm.EraseActualQuestion();
+            }
         }
-        else:
+        else
+        {
             return;
+        }
     }
 }

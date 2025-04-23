@@ -26,7 +26,7 @@ public partial class CSVOpener : Node
         
         bool isFirstLine = true;
 
-        while(!file.Eofreached())
+        while(!file.EofReached())
         {
             var line = file.GetLine();
             if(isFirstLine)
@@ -49,7 +49,7 @@ public partial class CSVOpener : Node
                     alternativaD = fields[5],
                     alternativaCorreta = fields[6],
                     dificuldade = fields[7],
-                    questãoRespondida = fields[8]                    
+                    questãoRespondida = false              
                 };
 
                 perguntas.Add(pergunta);
@@ -57,6 +57,7 @@ public partial class CSVOpener : Node
             }
         }
 
+        file.Close();
 
     }
 }

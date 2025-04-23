@@ -28,6 +28,7 @@ public partial class SortingArrow : RayCast2D
 	{
 		gm.questionNumber = markerNumber;
 		targetMarker = subjectType.markers[markerNumber];
+		Console.WriteLine("Oi");
 	}
 
 	private void SortMarkerNumber()

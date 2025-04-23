@@ -8,6 +8,7 @@ public partial class GameManager : Node
     public int questionNumber = -1;
     public string actualDifficulty = "Easy";
 
+    public bool canAnswer = false;
     public bool timeStart = false;
 
     public QuestionData actualQuestion;
@@ -38,5 +39,10 @@ public partial class GameManager : Node
     public void EraseActualQuestion()
     {
         actualQuestion = null;
+    }
+
+    public void AllowAnswerStatus(bool state)
+    {
+        canAnswer = state;
     }
 }
